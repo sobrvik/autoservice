@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Автосервіс "FixME"</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Автосервіс FixMe</h1>
+  <p>Надійне обслуговування вашого авто</p>
+</header>
+
+<nav>
+  <a href="#about">Про нас</a>
+  <a href="#services">Послуги</a>
+  <a href="#why">Чому ми</a>
+  <a href="#gallery">Галерея</a>
+  <a href="#reviews">Відгуки</a>
+  <a href="#contact">Контакти</a>
+</nav>
+
+<!-- Герой-секція -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Ваше авто — в надійних руках</h2>
+    <p>Сучасне обладнання, досвідчені майстри та гарантія на всі роботи</p>
+    <a href="{{ url_for('sign') }}" class="btn btn-primary">Записатись</a>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Про нас -->
+  <section id="about">
+    <h2>Про нас</h2>
+    <p>Ми працюємо понад 10 років і обслуговуємо авто будь-якої складності. У нас завжди чесні ціни, швидка діагностика та уважне ставлення до клієнтів.</p>
+  </section>
+
+  <!-- Послуги -->
+  <section id="services">
+    <h2>Наші послуги</h2>
+    <ul>
+      <li>Комп'ютерна діагностика</li>
+      <li>Заміна мастила та фільтрів</li>
+      <li>Ремонт двигуна та ходової</li>
+      <li>Шиномонтаж та балансування</li>
+      <li>Кузовні роботи, фарбування</li>
+      <li>Обслуговування кондиціонерів</li>
+    </ul>
+  </section>
+
+  <!-- Чому ми -->
+  <section id="why">
+    <h2>Чому обирають нас?</h2>
+    <ul>
+      <li>✔ Понад 10 років досвіду</li>
+      <li>✔ Гарантія на виконані роботи</li>
+      <li>✔ Новітнє діагностичне обладнання</li>
+      <li>✔ Зручне розташування та графік</li>
+      <li>✔ Безкоштовна консультація</li>
+    </ul>
+  </section>
+
+  <!-- Галерея -->
+  <section class="gallery" id="gallery">
+    <h2>Галерея</h2>
+    <div class="gallery">
+      <img src="../static/images/workshop6.jpg" alt="Сервіс 1">
+      <img src="../static/images/workshop2.png" alt="Сервіс 2">
+      <img src="../static/images/workshop3.jpeg" alt="Сервіс 3">
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <h2>Відгуки клієнтів</h2>
+    
+    <div class="review-card">
+        <p>"Швидко, якісно та недорого. Дуже задоволений сервісом!"</p>
+        <div class="author">— Андрій К.</div>
+    </div>
+
+    <div class="review-card">
+        <p>"Приїхав без запису, але мене все одно прийняли! Хлопці молодці!"</p>
+        <div class="author">— Олена П.</div>
+    </div>
+
+    <div class="review-card">
+        <p>"Знайшли проблему, яку інші не могли вирішити. Рекомендую!"</p>
+        <div class="author">— Роман Д.</div>
+    </div>
+</section>
+
+  <!-- Контакти -->
+  <section class="contact" id="contact">
+    <h2>Контакти</h2>
+    <div class="contact-info">
+      <p><i class="fas fa-map-marker-alt"></i> вул. Автомеханіків, 77, Рівне</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+38097777777">+38 (097) 777-77-77</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="office@fixme.ua">office@fixme.ua</a></p>
+      <p><i class="fas fa-clock"></i> Пн-Сб: 09:00 — 18:00</p>
+    </div>
+  
+    <div class="contact-form">
+      <h3>Зворотній зв’язок</h3>
+      <form action="{{ url_for('feedback') }}" method="POST">
+        <input type="text" name="name" placeholder="Ваше ім'я" required>
+        <input type="email" name="email" placeholder="Ваш email" required>
+        <input name="message" placeholder="Ваше повідомлення..." required></textarea>
+        <button type="submit">Надіслати</button>
+      </form>
+      <p></p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1764.345037747315!2d26.2516154617647!3d50.619033605678496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472f6caa2d7c89d7%3A0x27481abdbc4e484!2z0KDRltCy0L3QtSwg0KDRltCy0L3QtdC90YHRjNC60LAg0L7QsdC70LDRgdGC0Yw!5e1!3m2!1suk!2sua!4v1745328383535!5m2!1suk!2sua" 
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+<footer class="footer">
+  <p>&copy; 2025 Автосервіс "FixMe". Усі права захищені.</p>
+<!--<p><a href="{{ url_for('admin_login') }}" class="text-white">Вхід в адмін-панель</a></p>-->
+</footer>
+
+</body>
+</html>
