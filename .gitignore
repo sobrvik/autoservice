@@ -1,12 +1,12 @@
 __pycache__/
-
-pip-log.txt
-pip-delete-this-directory.txt
+*.pyc
+*.pyo
+*.pyd
+.env
 
 *.sqlite3
 
 instance/
-.webassets-cache
 
 __pypackages__/
 
@@ -17,4 +17,6 @@ ENV/
 env.bak/
 venv.bak/
 project/
+
+.DS_Store
 
